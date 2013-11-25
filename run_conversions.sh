@@ -6,8 +6,10 @@ mkdir "results"
 
 pdflatex test_case.tex
 bibtex test_case
-pdflatex test_case_tex4ht.tex
-bibtex test_case_tex4ht
+pdflatex test_case_mk4ht.tex
+bibtex test_case_mk4ht
+pdflatex test_case_htlatex.tex
+bibtex test_case_htlatex
 
 pandoc -s --bibliography=./bibliography.bib -o ./results/test_case_pandoc.html test_case.tex
 pandoc --mathjax --bibliography=./bibliography.bib -o ./results/test_case_pandoc_with_mathjax.html test_case.tex
@@ -20,13 +22,13 @@ pandoc -s --bibliography=./bibliography.bib -o ./results/test_case_pandoc.rtf te
 
 latex2rtf -o ./results/test_case_latex2rtf.rtf test_case.tex
 
-mk4ht oolatex test_case_tex4ht.tex
-mv test_case_tex4ht.odt ./results/test_case_mk4ht.odt
+mk4ht oolatex test_case_mk4ht.tex
+mv test_case_mk4ht.odt ./results/
 
-htlatex test_case_tex4ht.tex
+htlatex test_case_htlatex.tex
 if [ -d "results/test_case_htlatex" ]; then
   rm -fr "results/test_case_htlatex"
 fi
 mkdir "results/test_case_htlatex"
 cp -R figures results/test_case_htlatex/
-mv test_case_tex4ht*png test_case_tex4ht.html results/test_case_htlatex
+mv test_case*png test_case_*.html results/test_case_htlatex
