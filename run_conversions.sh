@@ -25,7 +25,7 @@ latex2rtf -o ./results/test_case_latex2rtf.rtf test_case.tex
 mk4ht oolatex test_case_mk4ht.tex
 mv test_case_mk4ht.odt ./results/
 
-htlatex test_case_htlatex.tex
+htlatex test_case_htlatex.tex "myxhtml"
 if [ -d "results/test_case_htlatex" ]; then
   rm -fr "results/test_case_htlatex"
 fi

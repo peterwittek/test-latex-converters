@@ -2,6 +2,7 @@
 \documentclass{article}
 %\pdfoutput=1
 \pdfminorversion=4
+\let\columnlines\empty
 \usepackage{times}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -12,7 +13,7 @@
 \usepackage[stretch=10]{microtype}
 \usepackage{todonotes}
 \usepackage{natbib}
-%\usepackage[hyperfootnotes=false,hidelinks=true]{hyperref}
+\usepackage[hyperfootnotes=false,hidelinks=true]{hyperref}
 \usepackage{multirow}
 
 \title{Test Case for Converters from \LaTeX to Word Processor Format}
@@ -35,15 +36,15 @@ This equation includes the identity operator from amssymb:
   \sum_{i}\Pi_{i}=\mathbb{I}.
 \end{equation}
 
-Whereas the following one includes a pmatrix from amsmath: [it does not work with mk4ht]
-%\begin{equation}
-%  e_{1}=\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\0 \end{pmatrix}.
-%\end{equation}
+Whereas the following one includes a pmatrix from amsmath:
+\begin{equation}
+  e_{1}=\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\0 \end{pmatrix}.
+\end{equation}
 
-The same column vector is expressed as an array in math mode: [it does not work with mk4ht]
-%\begin{equation}
-%  e_{1}=\left(\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\0 \end{array}\right).
-%\end{equation}
+The same column vector is expressed as an array in math mode:
+\begin{equation}
+  e_{1}=\left(\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\0 \end{array}\right).
+\end{equation}
 
 This is a cross reference to the next section: Section~\ref{figures}
 
