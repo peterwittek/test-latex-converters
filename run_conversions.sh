@@ -6,10 +6,18 @@ mkdir "results"
 
 pdflatex test_case.tex
 bibtex test_case
+pdflatex test_case.tex
+pdflatex test_case.tex
+
 pdflatex test_case_mk4ht.tex
 bibtex test_case_mk4ht
+pdflatex test_case_mk4ht.tex
+pdflatex test_case_mk4ht.tex
+
 pdflatex test_case_htlatex.tex
 bibtex test_case_htlatex
+pdflatex test_case_htlatex.tex
+pdflatex test_case_htlatex.tex
 
 pandoc -s --bibliography=./bibliography.bib -o ./results/test_case_pandoc.html test_case.tex
 pandoc --mathjax --bibliography=./bibliography.bib -o ./results/test_case_pandoc_with_mathjax.html test_case.tex

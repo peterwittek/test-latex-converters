@@ -3,7 +3,6 @@
 %\pdfoutput=1
 \pdfminorversion=4
 \let\columnlines\empty
-\usepackage{times}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{latexsym}
@@ -53,19 +52,17 @@ This is a citation without parenthesis: \cite{dummy2013least}. The citation afte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Figures and tables}\label{figures}
 \begin{figure}[ht!]
-  \begin{center}
-      \includegraphics[width=0.3\textwidth]{figures/arrow.pdf}
-    \caption{Arrow included in PDF format.}
-    \label{arrowpdf}
-  \end{center}
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/arrow.pdf}
+  \caption{Arrow included in PDF format.}
+  \label{arrowpdf}
 \end{figure}
 
 \begin{figure}[ht!]
-  \begin{center}
-      \includegraphics[width=0.3\textwidth]{figures/arrow.png}
-    \caption{Arrow included in PNG format.}
-    \label{arrowpng}
-  \end{center}
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/arrow.png}
+  \caption{Arrow included in PNG format.}
+  \label{arrowpng}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -76,39 +73,37 @@ This is a citation without parenthesis: \cite{dummy2013least}. The citation afte
 \subfigure[PNG]{
 \includegraphics[width=0.3\textwidth]{figures/arrow.png}
 }
-\label{combined}
 \caption{Images combined in subfigure environment.}
+\label{combined}
 \end{figure}
 
 Figure~\ref{arrowpdf} includes an arrow in PDF format. Figure~\ref{arrowpng} includes the same image bitmapped in PNG format. Figure~\ref{combined} combined the two images in a subfigure environment.
 
 \begin{table}
-\begin{center}
-\begin{tabular}{c|c|c}
-Column 1 & Column 2 & Column 3\\
-\hline
-1&2& $x^{2}$\\
-\hline
-\end{tabular}
-\caption{Simple table.}
-\label{simple}
-\end{center}
+  \centering
+  \begin{tabular}{c|c|c}
+  Column 1 & Column 2 & Column 3\\
+  \hline
+  1&2& $x^{2}$\\
+  \hline
+  \end{tabular}
+  \caption{Simple table.}
+  \label{simple}
 \end{table}
 
 \begin{table}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\multirow{2}{*}{Multirow}&\multicolumn{2}{|c|}{Multicolumn}\\
-\cline{2-3}
-&I&II\\
-\hline
-1&2& $x^{2}$\\
-\hline
-\end{tabular}
-\caption{Complicated table.}
-\label{complicated}
-\end{center}
+  \centering
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \multirow{2}{*}{Multirow}&\multicolumn{2}{|c|}{Multicolumn}\\
+  \cline{2-3}
+  &I&II\\
+  \hline
+  1&2& $x^{2}$\\
+  \hline
+  \end{tabular}
+  \caption{Complicated table.}
+  \label{complicated}
 \end{table}
 
 Table~\ref{simple} is a simple table without requiring special packages. Table~\ref{complicated} is more complicated: it includes multiple rows and multiple columns.
