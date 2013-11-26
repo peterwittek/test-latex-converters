@@ -20,7 +20,7 @@ pandoc -s --bibliography=./bibliography.bib -o ./results/test_case_pandoc.rtf te
 # This will run indefinitely
 # latex2html test_case.tex -split 0 -no_navigation -info "" -address "" -html_version 4.0,unicode
 
-latex2rtf -o ./results/test_case_latex2rtf.rtf test_case.tex
+latex2rtf -f0 -o ./results/test_case_latex2rtf.rtf test_case.tex
 
 mk4ht oolatex test_case_mk4ht.tex
 mv test_case_mk4ht.odt ./results/
