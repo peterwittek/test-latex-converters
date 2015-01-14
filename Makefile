@@ -1,4 +1,4 @@
-TARGETS=pandoc_html pandoc_mathjax pandoc_odt pandoc_docx pandoc_rtf latex2rtf mk4ht htlatex
+TARGETS=pandoc_html pandoc_mathjax pandoc_odt pandoc_docx pandoc_rtf latex2rtf mk4ht htlatex latexml
 
 all: $(TARGETS)
 
@@ -34,6 +34,12 @@ htlatex: aux results_dir
 		cp -R figures results/test_case_htlatex/
 		mv test_case*png test_case_*.html results/test_case_htlatex
 
+latexml: aux results_dir
+		if [ -d "results/test_case_latexml" ]; then	rm -fr "results/test_case_latexml"; fi
+		mkdir "results/test_case_latexml"
+		latexml --dest="results/test_case_latexml/test_case_latexml.xml" test_case.tex
+		latexmlpost --format=html4 --dest="results/test_case_latexml/test_case_latexml.html" "results/test_case_latexml/test_case_latexml.xml"
+		
 aux: 
 		pdflatex test_case.tex
 		bibtex test_case
@@ -53,5 +59,8 @@ aux:
 results_dir:
 		if [ ! -d results ]; then	mkdir results; fi
 
-clean:
-		rm -fr *.4* *tmp *out *aux *bbl *log *pdf *dvi *lg *idv *xref *ps *css figures/*.4* results
+clean: clean_tmp
+		rm -fr results
+
+clean_tmp:
+		rm -fr *.4* *tmp *out *aux *bbl *log *pdf *dvi *lg *idv *xref *ps *css figures/*.4*
